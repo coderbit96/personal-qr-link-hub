@@ -3,7 +3,6 @@ export const profileConfig = {
   title: 'Full Stack Developer',
   profileImage: '/profile.jpg',
   description: "Let's Connect!",
-  bio: 'I build AI-enabled web applications with React, Next.js, Node.js and MongoDB.',
 
   // Optional. Set VITE_PUBLIC_SITE_URL in Vercel to pin a custom production domain.
   siteUrl: import.meta.env.VITE_PUBLIC_SITE_URL || '',
@@ -31,6 +30,14 @@ export const profileConfig = {
       description: 'Connect with me professionally',
       url: 'https://www.linkedin.com/in/joydip-ghosh-83073033a/',
       icon: 'linkedin',
+      enabled: true,
+    },
+    {
+      id: 'whatsapp',
+      title: 'WhatsApp',
+      description: 'Chat with me on WhatsApp',
+      url: 'https://wa.me/919641212416',
+      icon: 'whatsapp',
       enabled: true,
     },
     {

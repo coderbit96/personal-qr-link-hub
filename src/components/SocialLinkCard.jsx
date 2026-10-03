@@ -28,10 +28,20 @@ function LinkedInIcon(props) {
   );
 }
 
+function WhatsAppIcon(props) {
+  return (
+    <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" {...props}>
+      <path d="M20.5 11.5a8.5 8.5 0 0 1-12.7 7.4L3 20.5l1.5-4.7a8.5 8.5 0 1 1 16-4.3Z" />
+      <path d="M8.1 8.3c.3-.5.7-.6 1.1-.1l1.1 1.3c.2.3.2.6-.1.9l-.5.5a7 7 0 0 0 3.4 3.4l.5-.5c.3-.3.6-.3.9-.1l1.4 1c.5.4.4.8 0 1.2-.7.8-1.5 1-2.5.7a10 10 0 0 1-6-6c-.3-1 .1-1.8.7-2.9Z" />
+    </svg>
+  );
+}
+
 const iconMap = {
   instagram: InstagramIcon,
   facebook: FacebookIcon,
   linkedin: LinkedInIcon,
+  whatsapp: WhatsAppIcon,
   globe: Globe2,
 };
 

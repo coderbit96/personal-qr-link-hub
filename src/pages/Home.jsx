@@ -12,7 +12,7 @@ export default function Home() {
 
   usePageMetadata({
     title: `${profileConfig.name} — ${profileConfig.description}`,
-    description: `${profileConfig.bio} Connect on social media and explore my portfolio.`,
+    description: `Connect with ${profileConfig.name} on social media or WhatsApp, and explore my portfolio.`,
   });
 
   useLayoutEffect(() => {
@@ -23,7 +23,7 @@ export default function Home() {
       const timeline = gsap.timeline({ defaults: { ease: 'power3.out' } });
       timeline
         .from('.profile-avatar', { scale: 0.75, opacity: 0, duration: 0.7 })
-        .from('.eyebrow, .profile-header h1, .profile-bio', { y: 16, opacity: 0, duration: 0.55, stagger: 0.08 }, '-=0.4')
+        .from('.eyebrow, .profile-header h1', { y: 16, opacity: 0, duration: 0.55, stagger: 0.08 }, '-=0.4')
         .from('.heading-block', { y: 14, opacity: 0, duration: 0.45 }, '-=0.25')
         .from('.social-card', { y: 22, scale: 0.985, duration: 0.55, stagger: 0.1, clearProps: 'transform' }, '-=0.2')
         .from('.footer-note', { y: 8, duration: 0.4, clearProps: 'transform' }, '-=0.15');

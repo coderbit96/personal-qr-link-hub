@@ -15,10 +15,7 @@ export default function ProfileHeader({ profile }) {
         {profile.title}
       </p>
       <h1 className="font-display text-3xl font-bold tracking-tight text-white sm:text-4xl">{profile.name}</h1>
-      <p className="profile-bio mx-auto mt-3 max-w-sm text-sm leading-6 text-slate-400 sm:text-[15px]">
-        {profile.bio}
-      </p>
-      <div className="heading-block mt-7">
+      <div className="heading-block mt-6">
         <h2 className="font-display text-xl font-semibold text-white sm:text-2xl">{profile.description}</h2>
         <p className="mt-1.5 text-sm text-slate-500">Find me across the web</p>
       </div>

@@ -104,12 +104,14 @@ button:focus-visible, a:focus-visible, input:focus-visible {
 .social-card--instagram::before { background: linear-gradient(105deg, rgba(236,72,153,.11), rgba(139,92,246,.07) 55%, transparent); }
 .social-card--facebook::before { background: linear-gradient(105deg, rgba(59,130,246,.13), transparent 70%); }
 .social-card--linkedin::before { background: linear-gradient(105deg, rgba(14,118,168,.16), rgba(59,130,246,.05) 70%, transparent); }
+.social-card--whatsapp::before { background: linear-gradient(105deg, rgba(34,197,94,.14), rgba(16,185,129,.05) 70%, transparent); }
 .social-card--portfolio::before { background: linear-gradient(105deg, rgba(6,182,212,.12), rgba(59,130,246,.05) 65%, transparent); }
 
 .card-icon { border: 1px solid rgba(255,255,255,.08); }
 .social-card--instagram .card-icon { color: #f9a8d4; background: linear-gradient(145deg, rgba(236,72,153,.17), rgba(139,92,246,.13)); }
 .social-card--facebook .card-icon { color: #93c5fd; background: rgba(59,130,246,.14); }
 .social-card--linkedin .card-icon { color: #7dd3fc; background: rgba(14,118,168,.16); }
+.social-card--whatsapp .card-icon { color: #86efac; background: rgba(34,197,94,.15); }
 .social-card--portfolio .card-icon { color: #67e8f9; background: linear-gradient(145deg, rgba(6,182,212,.14), rgba(59,130,246,.1)); }
 .card-arrow { background: rgba(255,255,255,.035); }
 
