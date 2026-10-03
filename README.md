@@ -26,3 +26,7 @@ VITE_PUBLIC_SITE_URL=https://your-domain.com
 ```
 
 Because the QR points to the landing page rather than an individual social URL, social destinations can be updated and redeployed without replacing the printed QR.
+
+## Install on a phone
+
+After deploying over HTTPS, open the landing page on your phone and tap **Install app**. On supported Android browsers, this opens the native install prompt. On iPhone, tap **Share → Add to Home Screen** in Safari. The app opens in a standalone window and keeps the landing page and `/qr` route available offline after the first online visit. External social and portfolio destinations still need an internet connection.

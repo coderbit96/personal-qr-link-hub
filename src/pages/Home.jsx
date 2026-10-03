@@ -2,6 +2,7 @@ import { useLayoutEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import ProfileHeader from '../components/ProfileHeader';
 import SocialLinkCard from '../components/SocialLinkCard';
+import InstallAppButton from '../components/InstallAppButton';
 import { profileConfig } from '../config/links';
 import { usePageMetadata } from '../hooks/usePageMetadata';
 
@@ -37,9 +38,10 @@ export default function Home() {
       <nav className="mt-6 flex flex-col gap-3.5" aria-label="Social links">
         {enabledLinks.map((link) => <SocialLinkCard key={link.id} link={link} />)}
       </nav>
-      <p className="footer-note mt-auto pt-9 text-center text-xs text-slate-600">
-        Designed with intention · Built for connection
-      </p>
+      <footer className="footer-note mt-auto pt-9 text-center">
+        <InstallAppButton />
+        <p className="mt-4 text-xs text-slate-600">Designed with intention · Built for connection</p>
+      </footer>
     </main>
   );
 }
