@@ -44,8 +44,8 @@ export default function QRPage() {
   return (
     <main ref={pageRef} className="page-shell relative mx-auto min-h-dvh w-full max-w-[450px] px-5 py-8 sm:px-0 sm:py-12">
       <div className="qr-entrance mb-6 text-center">
-        <p className="text-xs font-semibold uppercase tracking-[0.22em] text-blue-300">Joydip Ghosh · Digital connection card</p>
-        <h1 className="mt-3 font-display text-3xl font-bold tracking-tight text-white">Scan to connect</h1>
+        <p className="qr-kicker text-xs font-semibold uppercase tracking-[0.22em]">Joydip Ghosh · Digital connection card</p>
+        <h1 className="hero-title mt-3 font-display text-3xl font-bold tracking-tight">Scan to connect</h1>
         <p className="mx-auto mt-2 max-w-sm text-sm leading-6 text-slate-400">Point your phone camera at the code to open my social links and portfolio.</p>
       </div>
 
@@ -83,7 +83,7 @@ export default function QRPage() {
           </p>
         </section>
       )}
-      <Link to="/links" className="qr-entrance mt-5 flex min-h-12 items-center justify-center gap-2 rounded-xl border border-white/10 bg-white/[0.04] px-4 text-sm font-semibold text-slate-200 transition-colors hover:bg-white/[0.08]">
+      <Link to="/links" className="link-card-button qr-entrance mt-5 flex min-h-12 items-center justify-center gap-2 rounded-xl border border-white/10 px-4 text-sm font-semibold text-slate-100">
         Open my link card <ArrowUpRight size={17} aria-hidden="true" />
       </Link>
       <p className="qr-entrance mt-3 text-center text-xs leading-5 text-slate-500">Viewing this on the same phone? Tap the link card button above.</p>
