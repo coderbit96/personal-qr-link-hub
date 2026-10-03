@@ -2,7 +2,6 @@ import { useLayoutEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import ProfileHeader from '../components/ProfileHeader';
 import SocialLinkCard from '../components/SocialLinkCard';
-import InstallAppButton from '../components/InstallAppButton';
 import { profileConfig } from '../config/links';
 import { usePageMetadata } from '../hooks/usePageMetadata';
 
@@ -39,8 +38,7 @@ export default function Home() {
         {enabledLinks.map((link) => <SocialLinkCard key={link.id} link={link} />)}
       </nav>
       <footer className="footer-note mt-auto pt-9 text-center">
-        <InstallAppButton />
-        <p className="mt-4 text-xs text-slate-600">Designed with intention · Built for connection</p>
+        <p className="text-xs text-slate-600">Designed with intention · Built for connection</p>
       </footer>
     </main>
   );

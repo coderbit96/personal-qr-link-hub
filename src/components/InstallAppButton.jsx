@@ -1,12 +1,9 @@
 import { useEffect, useState } from 'react';
 import { Download } from 'lucide-react';
-
-function isInstalled() {
-  return window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone === true;
-}
+import { isStandalonePwa } from '../config/pwa';
 
 export default function InstallAppButton() {
-  const [installed, setInstalled] = useState(isInstalled);
+  const [installed, setInstalled] = useState(isStandalonePwa);
   const [installPrompt, setInstallPrompt] = useState(null);
   const [showInstructions, setShowInstructions] = useState(false);
 
@@ -55,10 +52,11 @@ export default function InstallAppButton() {
         aria-expanded={showInstructions}
         aria-controls={showInstructions ? 'install-instructions' : undefined}
       >
-        <Download size={15} aria-hidden="true" /> Install app
+        <Download size={15} aria-hidden="true" /> Install Scan &amp; Connect
       </button>
       {showInstructions && (
         <div id="install-instructions" className="mx-auto mt-3 max-w-sm rounded-2xl border border-white/10 bg-panel p-4 text-left text-xs leading-5 text-slate-300" role="status">
+          <p className="font-semibold text-cyan-200">The installed app opens directly to this QR screen.</p>
           <p><span className="font-semibold text-white">iPhone:</span> Tap Share in Safari, then Add to Home Screen.</p>
           <p className="mt-2"><span className="font-semibold text-white">Android:</span> Open your browser menu and choose Install app or Add to Home screen.</p>
         </div>

@@ -1,6 +1,7 @@
 import { useLayoutEffect, useRef, useState } from 'react';
 import { Link2, Save } from 'lucide-react';
 import { gsap } from 'gsap';
+import InstallAppButton from '../components/InstallAppButton';
 import QRCodeGenerator from '../components/QRCodeGenerator';
 import { profileConfig } from '../config/links';
 import { usePageMetadata } from '../hooks/usePageMetadata';
@@ -82,6 +83,10 @@ export default function QRPage() {
           </p>
         </section>
       )}
+
+      <footer className="qr-entrance mt-5 text-center">
+        <InstallAppButton />
+      </footer>
     </main>
   );
 }
