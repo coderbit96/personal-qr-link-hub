@@ -1,0 +1,45 @@
+export const profileConfig = {
+  name: 'Joydip Ghosh',
+  title: 'Full Stack Developer',
+  profileImage: '/profile.jpg',
+  description: "Let's Connect!",
+  bio: 'I build AI-enabled web applications with React, Next.js, Node.js and MongoDB.',
+
+  // Optional. Set VITE_PUBLIC_SITE_URL in Vercel to pin a custom production domain.
+  siteUrl: import.meta.env.VITE_PUBLIC_SITE_URL || '',
+
+  links: [
+    {
+      id: 'instagram',
+      title: 'Instagram Profile',
+      description: 'Follow me on Instagram',
+      url: 'https://www.instagram.com/joydip.88/',
+      icon: 'instagram',
+      enabled: true,
+    },
+    {
+      id: 'facebook',
+      title: 'Facebook Profile',
+      description: 'Connect with me on Facebook',
+      url: 'https://www.facebook.com/joydip.ghosh.986227',
+      icon: 'facebook',
+      enabled: true,
+    },
+    {
+      id: 'linkedin',
+      title: 'LinkedIn Profile',
+      description: 'Connect with me professionally',
+      url: 'https://www.linkedin.com/in/joydip-ghosh-83073033a/',
+      icon: 'linkedin',
+      enabled: true,
+    },
+    {
+      id: 'portfolio',
+      title: 'My Portfolio',
+      description: 'Explore my projects and work',
+      url: 'https://www.automade.in/',
+      icon: 'globe',
+      enabled: true,
+    },
+  ],
+};
