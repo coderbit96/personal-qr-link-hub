@@ -10,15 +10,22 @@ export function getSafeHttpsUrl(value) {
 }
 
 export function getProductionLandingUrl(configuredUrl = '') {
-  const savedUrl = typeof window !== 'undefined' ? localStorage.getItem('qrhub:site-url') : '';
-  const configured = getSafeHttpsUrl(savedUrl || configuredUrl);
-  if (configured) return new URL('/', configured).href;
+  const configured = getSafeHttpsUrl(configuredUrl);
+  if (configured && !['localhost', '127.0.0.1', '[::1]'].includes(new URL(configured).hostname)) {
+    return new URL('/links', configured).href;
+  }
 
   if (typeof window !== 'undefined') {
     const origin = getSafeHttpsUrl(window.location.origin);
     if (origin && !['localhost', '127.0.0.1', '[::1]'].includes(new URL(origin).hostname)) {
-      return new URL('/', origin).href;
+      return new URL('/links', origin).href;
     }
+  }
+
+  const savedUrl = typeof window !== 'undefined' ? localStorage.getItem('qrhub:site-url') : '';
+  const saved = getSafeHttpsUrl(savedUrl);
+  if (saved && !['localhost', '127.0.0.1', '[::1]'].includes(new URL(saved).hostname)) {
+    return new URL('/links', saved).href;
   }
 
   return '';

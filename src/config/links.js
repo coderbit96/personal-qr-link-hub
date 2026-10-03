@@ -4,8 +4,8 @@ export const profileConfig = {
   profileImage: '/profile.jpg',
   description: "Let's Connect!",
 
-  // Optional. Set VITE_PUBLIC_SITE_URL in Vercel to pin a custom production domain.
-  siteUrl: import.meta.env.VITE_PUBLIC_SITE_URL || '',
+  // Keep printed QR codes tied to the stable production domain, even on preview deployments.
+  siteUrl: import.meta.env.VITE_PUBLIC_SITE_URL || 'https://scan-joydip.vercel.app',
 
   links: [
     {

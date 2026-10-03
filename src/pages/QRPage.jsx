@@ -1,5 +1,5 @@
 import { useLayoutEffect, useRef, useState } from 'react';
-import { ArrowLeft, Link2, Save } from 'lucide-react';
+import { ArrowUpRight, Link2, Save } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { gsap } from 'gsap';
 import QRCodeGenerator from '../components/QRCodeGenerator';
@@ -15,7 +15,7 @@ export default function QRPage() {
 
   usePageMetadata({
     title: `QR Code — ${profileConfig.name}`,
-    description: `Scan or download the QR code for ${profileConfig.name}'s social link hub.`,
+    description: `Scan, share, or download a QR code to open ${profileConfig.name}'s social link hub.`,
   });
 
   useLayoutEffect(() => {
@@ -30,11 +30,11 @@ export default function QRPage() {
     event.preventDefault();
     const safeUrl = getSafeHttpsUrl(draftUrl);
     if (!safeUrl || ['localhost', '127.0.0.1', '[::1]'].includes(new URL(safeUrl).hostname)) {
-      setValidationMessage('Enter the full HTTPS URL of your deployed landing page. Localhost is not allowed.');
+      setValidationMessage('Enter the HTTPS URL of your deployed site. Localhost is not allowed.');
       return;
     }
 
-    const normalized = new URL('/', safeUrl).href;
+    const normalized = new URL('/links', safeUrl).href;
     localStorage.setItem('qrhub:site-url', normalized);
     setLandingUrl(normalized);
     setDraftUrl(normalized);
@@ -43,9 +43,11 @@ export default function QRPage() {
 
   return (
     <main ref={pageRef} className="page-shell relative mx-auto min-h-dvh w-full max-w-[450px] px-5 py-8 sm:px-0 sm:py-12">
-      <Link to="/" className="qr-entrance mb-6 inline-flex min-h-11 items-center gap-2 rounded-xl px-2 text-sm font-medium text-slate-400 transition-colors hover:text-white">
-        <ArrowLeft size={18} aria-hidden="true" /> Back to profile
-      </Link>
+      <div className="qr-entrance mb-6 text-center">
+        <p className="text-xs font-semibold uppercase tracking-[0.22em] text-blue-300">Joydip Ghosh · Digital connection card</p>
+        <h1 className="mt-3 font-display text-3xl font-bold tracking-tight text-white">Scan to connect</h1>
+        <p className="mx-auto mt-2 max-w-sm text-sm leading-6 text-slate-400">Point your phone camera at the code to open my social links and portfolio.</p>
+      </div>
 
       {landingUrl ? (
         <div className="qr-entrance"><QRCodeGenerator url={landingUrl} /></div>
@@ -59,7 +61,7 @@ export default function QRPage() {
           </p>
 
           <form className="mt-6" onSubmit={saveUrl} noValidate>
-            <label htmlFor="landing-url" className="mb-2 block text-sm font-medium text-slate-300">Production landing-page URL</label>
+            <label htmlFor="landing-url" className="mb-2 block text-sm font-medium text-slate-300">Deployed website URL</label>
             <input
               id="landing-url"
               type="url"
@@ -77,10 +79,14 @@ export default function QRPage() {
             </button>
           </form>
           <p className="mt-5 text-xs leading-5 text-slate-500">
-            For deployment, you can also set <code className="text-slate-400">VITE_PUBLIC_SITE_URL</code>. On Vercel, the live HTTPS origin is detected automatically.
+            The QR always points to the <code className="text-slate-400">/links</code> page on the deployed site.
           </p>
         </section>
       )}
+      <Link to="/links" className="qr-entrance mt-5 flex min-h-12 items-center justify-center gap-2 rounded-xl border border-white/10 bg-white/[0.04] px-4 text-sm font-semibold text-slate-200 transition-colors hover:bg-white/[0.08]">
+        Open my link card <ArrowUpRight size={17} aria-hidden="true" />
+      </Link>
+      <p className="qr-entrance mt-3 text-center text-xs leading-5 text-slate-500">Viewing this on the same phone? Tap the link card button above.</p>
     </main>
   );
 }

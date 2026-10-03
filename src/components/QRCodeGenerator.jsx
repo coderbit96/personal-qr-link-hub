@@ -48,7 +48,7 @@ export default function QRCodeGenerator({ url }) {
       <div className="mb-5 flex items-start justify-between gap-4">
         <div>
           <p className="mb-2 text-xs font-semibold uppercase tracking-[0.2em] text-blue-300">Ready to scan</p>
-          <h1 id="qr-title" className="font-display text-2xl font-bold text-white">Your connection QR</h1>
+          <h2 id="qr-title" className="font-display text-2xl font-bold text-white">Your connection QR</h2>
         </div>
         <span className="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-emerald-400/10 text-emerald-300" title="Secure HTTPS URL">
           <ShieldCheck size={21} aria-hidden="true" />

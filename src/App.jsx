@@ -6,8 +6,9 @@ export default function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/qr" element={<QRPage />} />
+        <Route path="/" element={<QRPage />} />
+        <Route path="/qr" element={<Navigate to="/" replace />} />
+        <Route path="/links" element={<Home />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </BrowserRouter>
