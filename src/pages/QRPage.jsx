@@ -1,6 +1,5 @@
 import { useLayoutEffect, useRef, useState } from 'react';
-import { ArrowUpRight, Link2, Save } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link2, Save } from 'lucide-react';
 import { gsap } from 'gsap';
 import QRCodeGenerator from '../components/QRCodeGenerator';
 import { profileConfig } from '../config/links';
@@ -83,10 +82,6 @@ export default function QRPage() {
           </p>
         </section>
       )}
-      <Link to="/links" className="link-card-button qr-entrance mt-5 flex min-h-12 items-center justify-center gap-2 rounded-xl border border-white/10 px-4 text-sm font-semibold text-slate-100">
-        Open my link card <ArrowUpRight size={17} aria-hidden="true" />
-      </Link>
-      <p className="qr-entrance mt-3 text-center text-xs leading-5 text-slate-500">Viewing this on the same phone? Tap the link card button above.</p>
     </main>
   );
 }
